@@ -1,72 +1,81 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EcoWear
+#### Deployed link :  https://eco-wear.netlify.app/
+EcoWear is a full-stack e-commerce platform for buying and selling second-hand clothes. It allows users to create posts, upload images of clothing items, and browse, purchase, or comment on listings. The project is built using the MERN stack with a focus on efficiency, security, and scalability.
 
-## Available Scripts
+## Features
+#### User Authentication & Authorization: 
 
-In the project directory, you can run:
+Users can sign up, log in, and securely manage their accounts using JWT tokens for authentication, which are stored as HTTP cookies.
 
-### `npm start`
+Middleware ensures secure API access.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+#### Image Management:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Users can upload up to 5 images per post with real-time validation, previews, and deletion options.
 
-### `npm test`
+GridFS is used to efficiently store and retrieve images from MongoDB.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Product Listings & CRUD Operations:
 
-### `npm run build`
+Create, read, update, and delete (CRUD) operations for products, with real-time data updates on the client side.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Each post includes details like clothing type, size, price, description, and uploaded images.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### User-specific Homepages:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+After logging in, users are greeted with personalized content and have the ability to edit their profiles.
 
-### `npm run eject`
+#### Responsive Design:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Built with Chakra UI to ensure a seamless experience across all devices, including mobile, tablet, and desktop.
+## Tech Stack
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Front-End :** React.js with Chakra UI for component-based, responsive design.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Back-End :** Node.js and Express.js to handle authentication, business logic, and routing and Axios for API communication.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+**Database :** MongoDB for efficient, scalable storage of user data and posts and GridFS for managing image uploads.
 
-## Learn More
+**Authentication & Security :** JWT tokens are used for authentication, with user sessions managed through HTTP-only cookies for secure access control.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Deployment & Hosting :** Deployed using vercel (for backend) & netlify(for the frontend) and MongoDB Atlas for cloud-based database management.
+## Screenshots
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![App Screenshot](https://i.ibb.co/hZgFKZQ/ew1.png)
 
-### Code Splitting
+![App Screenshot](https://i.ibb.co/zFm0H5y/ew3.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+![App Screenshot](https://i.ibb.co/5swSgB2/ew2.png)
 
-### Analyzing the Bundle Size
+![App Screenshot](https://i.ibb.co/6B9dMmQ/ew4.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Clone the Repository :-
 
-### Advanced Configuration
+git clone https://github.com/rdrkshkhrn/EcoWear_Front.git
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Navigate to the project directory : cd EcoWear_Front
 
-### Deployment
+Install dependencies:
+npm install
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Run the application:
+npm start
+    
+The application will run at http://localhost:3000.
+## Contributing
 
-### `npm run build` fails to minify
+Contributions are welcome! If you'd like to contribute to the project, feel free to open a pull request or create an issue for discussion. Here's how you can contribute:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# EcoWear-Frontend" 
-"# EcoWear-Front" 
+Fork the repository.
+
+Create a new branch (git checkout -b feature-branch).
+
+Make your changes and commit them (git commit -m 'Added new feature').
+
+Push to the branch (git push origin feature-branch).
+
+Create a pull request.
