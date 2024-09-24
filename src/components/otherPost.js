@@ -30,7 +30,7 @@ function OtherPost() {
   };
 
   return (
-    <Box>
+    <Box p={6}>
       {otherPosts && otherPosts.length > 0 ? (
        <Grid gap={4}
        templateColumns={{
