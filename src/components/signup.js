@@ -14,7 +14,6 @@ function Signup() {
     e.preventDefault();
     const response = await axiosWrapper("post","/signup",{name,email,password},null,toast,"Account created successfully",true);
     if (response !== null) {
-      console.log(response);
       navigate("/home"); 
     }
   };

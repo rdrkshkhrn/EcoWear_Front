@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Box, FormControl, FormLabel, Input, Button, Heading, Text, useToast } from "@chakra-ui/react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import Navbar from "../components/navbar";
 import { axiosWrapper } from "../utilities/AxiosWrapper";
+import { useNavigate } from "react-router-dom";
+
 function Account() {
   const [mobileNo, setMobileNo] = useState("");
   const [address, setAddress] = useState({
@@ -13,20 +12,24 @@ function Account() {
     pincode: "",
   });
   const [errorMessage, setErrorMessage] = useState("");
-  const [userName, setUserName] = useState(null);
   const toast = useToast();
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     fetchUserData();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const fetchUserData = async () => {
     const response = await axiosWrapper('get',"/user",{},null,toast,null,null);
     if(response!==null){
-      const {name, mobileNo, address } = response;
-    setUserName(name)
+      const {mobileNo, address } = response;
     setMobileNo(mobileNo || "");
     setAddress(address || { street: "", city: "", state: "", pincode: "" });
+    }
+    else{
+      navigate("/"); 
     }
   };
 
@@ -38,7 +41,7 @@ function Account() {
         setErrorMessage("Please fill in all required fields.");
         return;
       }
-      const response = await axiosWrapper('put','/user/update',{mobileNo,address},null, toast,"Profile updated!",true);
+      await axiosWrapper('put','/user/update',{mobileNo,address},null, toast,"Profile updated!",true);
 
   };
 

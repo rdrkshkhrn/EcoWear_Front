@@ -1,6 +1,7 @@
 import axios from "axios";
 
-export const baseURL =  'https://eco-wear-3.vercel.app';
+//export const baseURL =  'https://eco-wear-3.vercel.app';
+export const baseURL = "https://eco-wear-xi.vercel.app";
 export async function axiosWrapper(method,endpoint,body,headers,toast,successMessage,isShowToast) {
     try {
         let response = null;

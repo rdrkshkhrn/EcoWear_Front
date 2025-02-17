@@ -6,6 +6,7 @@ import Navbar from '../components/navbar';
 import UserPost from '../components/userPost';
 import Account from './account';
 import { axiosWrapper } from '../utilities/AxiosWrapper';
+import LoadingScreen from '../utilities/loadingScreen';
 
 
 function ProtectedRoutes() {
@@ -27,7 +28,7 @@ function ProtectedRoutes() {
 
 
   if(!user){
-    return <></>;
+    return <div><LoadingScreen/></div>;
   }
 
   return (

@@ -1,7 +1,6 @@
-import { Box, Card, CardBody, Flex, Heading, Text } from "@chakra-ui/react";
+import {Card, CardBody, Flex, Heading, Text } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import Signin from "../components/signin";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import Signup from "../components/signup";
 import { axiosWrapper } from "../utilities/AxiosWrapper";

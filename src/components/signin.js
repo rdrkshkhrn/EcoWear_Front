@@ -12,7 +12,6 @@ function Signin() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const createResponse = await axiosWrapper("post","/signin",{ email, password },null,toast,null,true);
-    //console.log(createResponse)
       if(createResponse !== null ){
         navigate("/home");
       }
